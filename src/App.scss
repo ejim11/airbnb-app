@@ -1,3 +1,7 @@
+@import "./Components/scss/base";
+@import "./Components/scss/mixin";
+
+
 // general styling settings
 
 *,
@@ -10,4 +14,43 @@
 
 html {
     box-sizing: border-box;
+
+
+    font-size: 70%; //1rem = 16px
+
+    @include respond(bigLaptop) {
+        font-size: 67.5%; //1rem = 10px
+    }
+
+    // @include respond(laptop) {
+    //     // font-size: 62.5%; //1rem = 10px
+    // }
+
+    // @include respond(miniLaptop) {
+    //     // font-size: 56.25%; //1rem = 9px
+    // }
+}
+
+
+body {
+    font-family: $font-display;
+    font-size: $text-font;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+}
+
+.App {
+    width: 70%;
+    margin: 0 auto;
+
+    @include respond(bigLaptop) {
+        width: 90%;
+    }
+
+    @include respond(medLaptop) {
+        width: 100%;
+    }
 }

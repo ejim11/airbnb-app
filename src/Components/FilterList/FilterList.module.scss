@@ -1,0 +1,170 @@
+@import "../scss/base";
+@import "../scss/mixin";
+
+.container {
+    display: flex;
+    // width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    top: 7.95rem;
+    z-index: 10;
+    background-color: $color-white;
+    position: fixed;
+
+    @include respond(bigLaptop) {
+        width: 90%;
+    }
+
+    @include respond(medLaptop) {
+        width: 100%;
+    }
+
+
+    & .list-container {
+        width: 90%;
+        box-shadow: inset .1rem 0rem 3.5rem 1.5rem $color-white;
+        position: relative;
+        padding: 0 4rem;
+
+        @include respond(miniLaptop) {
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            padding: 0 2rem;
+        }
+
+
+
+        & .left-angle-box,
+        .right-angle-box {
+            position: absolute;
+            top: 2.3rem;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid $color-secondary;
+            border-radius: 50%;
+            cursor: pointer;
+
+            @include respond(phone) {
+                display: none;
+            }
+        }
+
+        & .left-angle-box {
+            left: 1rem;
+        }
+
+        & .right-angle-box {
+            right: 1rem;
+        }
+
+        & ul {
+            list-style-type: none;
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 3rem;
+                height: 100%;
+            }
+
+            &::before {
+                left: 4rem;
+                background: linear-gradient(to left, transparent, $color-white );
+
+                @include respond(phone) {
+                    left: 1.5rem;
+                }
+            }
+
+            &::after {
+                right: 4rem;
+                background: linear-gradient(to right, transparent, $color-white );
+
+                @include respond(phone) {
+                    right: 1.5rem;
+                }
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            & li {
+                font-size: 1.2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 1rem;
+                padding: 1rem;
+                cursor: pointer;
+                transition: all .3s ease-in;
+
+                &:hover {
+                    color: $color-black;
+                }
+
+                & p {
+                    width: max-content;
+                    margin: 1rem 0 .5rem;
+                    color: currentColor;
+                }
+
+
+                & .filter-img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+
+
+    .active {
+        border-bottom: 2px solid $color-black;
+        color: $color-black;
+    }
+
+    .inactive {
+        border-bottom: 2px solid transparent;
+        color: $color-secondary;
+    }
+
+    .filter-box {
+        display: flex;
+        align-self: center;
+        width: 10%;
+
+        @include respond(miniLaptop) {
+            display: none;
+        }
+
+
+        & div {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba($color-black, .4);
+            border-radius: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.hide-l-angle,
+.hide-r-angle {
+    display: none;
+}
+
+.display-l-angle,
+.display-r-angle {
+    display: flex;
+}

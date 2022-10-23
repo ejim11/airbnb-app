@@ -1,0 +1,67 @@
+@import "../scss/base";
+
+.item-container {
+    position: relative;
+
+
+    & .heart-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
+        transition: all .2s ease-in;
+    }
+
+    & .item-img {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+
+        & span {
+            display: flex;
+            align-items: center;
+
+            & .star-icon {
+                width: 1.7rem;
+                height: 1.7rem;
+
+            }
+        }
+    }
+
+    & .item-text {
+        color: $color-secondary;
+        margin-top: .3rem;
+    }
+
+    & .item-price {
+        margin-top: 1rem;
+
+        & span {
+            font-weight: 700;
+
+
+        }
+    }
+}
+
+.active {
+    color: $color-primary;
+}
+
+.inactive {
+    color: $color-white
+}

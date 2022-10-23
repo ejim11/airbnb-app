@@ -1,0 +1,153 @@
+@import "../scss/base";
+@import "../scss/mixin";
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    height: 8rem;
+    // width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0rem 4rem;
+    border-bottom: 1px solid rgba($color-secondary, .2);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    @include respond(bigLaptop) {
+        width: 90%;
+    }
+
+    @include respond(medLaptop) {
+        width: 100%;
+    }
+
+    @include respond(phone) {
+        padding: 0 2rem;
+    }
+
+    & .options-div {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        padding: 1rem 0;
+        border: 1px solid rgba($color-secondary, .5);
+        border-radius: 3rem;
+        color: $color-black;
+        box-shadow: 1px 1px 10px 3px rgba($color-black, .1);
+
+
+        @include respond(phone) {
+            display: none;
+        }
+
+        & p {
+            padding: 0 1.5rem;
+            cursor: pointer;
+        }
+
+        & .middle-div {
+            border-left: 1px solid $color-secondary;
+            border-right: 1px solid $color-secondary;
+        }
+
+        & .last-div {
+            color: $color-secondary;
+        }
+
+        & .search-box {
+            margin: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: $color-primary;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s ease-in;
+            color: $color-white;
+
+            &:hover {
+                background-color: rgba($color-primary, .4);
+                color: $color-primary;
+            }
+
+            & .search-icon {
+                color: currentColor;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+
+    & .host-paragraph {
+        margin-right: 1rem;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        transition: all .3s ease-in;
+
+        @include respond(bigTablet) {
+            display: none;
+        }
+
+        &:hover {
+            background-color: rgba($color-secondary, .2);
+        }
+    }
+
+    & .world-box {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .3s ease-in;
+
+        @include respond(bigTablet) {
+            display: none;
+        }
+
+        &:hover {
+            background-color: rgba($color-secondary, .2);
+        }
+    }
+
+    & .world-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    & .user-box {
+        border: 1px solid rgba($color-secondary, .4);
+        border-radius: 2rem;
+        padding: .5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @include respond(phone) {
+            margin-left: auto;
+        }
+
+        & .menu-icon {
+            width: 1.8rem;
+            height: 1.8rem;
+            margin: 0 1rem;
+        }
+
+        & .user-icon {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-right: .5rem;
+            color: $color-secondary;
+        }
+    }
+
+}
