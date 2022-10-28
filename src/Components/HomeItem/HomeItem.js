@@ -2,7 +2,7 @@ import classes from "./HomeItem.module.scss";
 import { AiFillStar } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
-import SwiperComponent from "../UI/SwiperComponent/SwiperComponent";
+// import SwiperComponent from "../UI/SwiperComponent/SwiperComponent";
 
 const HomeItem = (props) => {
   const [heartState, setHeartState] = useState(false);
@@ -10,6 +10,7 @@ const HomeItem = (props) => {
   return (
     <div className={classes["item-container"]}>
       <AiFillHeart
+        data-testid={"heart"}
         className={`${classes["heart-icon"]} ${
           heartState ? classes["active"] : classes["inactive"]
         }`}
@@ -17,8 +18,8 @@ const HomeItem = (props) => {
           setHeartState((prevState) => !prevState);
         }}
       />
-      <SwiperComponent images={props.images} name={props.name} />
-      <div>
+      {/* <SwiperComponent images={props.images} name={props.name} /> */}
+      <div data-testid={"homes-item"}>
         <p className={classes["name"]}>
           {props.name}
           <span>

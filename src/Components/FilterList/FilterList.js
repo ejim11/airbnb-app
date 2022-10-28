@@ -28,7 +28,6 @@ const FilterList = () => {
 
   const scroll = (value) => {
     listRef.current.scrollLeft += value;
-    console.log(listRef);
     // setScrollState(listRef.current.scrollLeft);
     setScrollState((prevState) => prevState + value);
     console.log(listRef.current.scrollLeft);
@@ -43,6 +42,7 @@ const FilterList = () => {
               ? classes["hide-l-angle"]
               : classes["display-l-angle"]
           }`}
+          data-testid={"left-arr"}
           onClick={() => {
             scroll(-300);
           }}
@@ -55,6 +55,7 @@ const FilterList = () => {
               ? classes["hide-r-angle"]
               : classes["display-r-angle"]
           }`}
+          data-testid={"right-arr"}
           onClick={() => {
             scroll(300);
           }}
