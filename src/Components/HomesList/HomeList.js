@@ -6,7 +6,7 @@ const HomeList = () => {
   const homesList = data.map((item, i) => (
     <HomeItem
       key={i}
-      image={item.images[0]}
+      images={item.images}
       name={item.name}
       rating={item.rating}
       host={item.host}

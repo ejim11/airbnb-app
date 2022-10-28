@@ -13,7 +13,7 @@ header {
     border-bottom: 1px solid rgba($color-secondary, .2);
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 30;
 
     @include respond(bigLaptop) {
         width: 90%;
